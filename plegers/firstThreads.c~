@@ -1,0 +1,21 @@
+#include <pthreads.h>
+#include <stdio.h>
+#include <stdlib.h>
+
+void
+toPrint
+(char *message)
+{
+  printf("%s",message);
+  pthread_exit(void *value_ptr);
+}
+
+int
+main
+(void)
+{
+  int thread_un,thread_deux;
+  pthread_create(thread_un,NULL,toPrint,"Je suis A et j'ai fini\n");
+  
+  pthread_create(thread_deux,NULL,toPrint, "Je suis B et j'ai fini\n");
+}
